@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Event Production — Wireframe Set</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-id">
+    <span class="masthead-mark">TBN</span>
+    <div>
+      <div class="masthead-title">Event Production Tool</div>
+      <div class="masthead-sub">Wireframe set — for client review, layout &amp; flow only</div>
+    </div>
+  </div>
+  <div class="masthead-meta">
+    <span>DRAWN 2026-10-28</span>
+    <span>REV A</span>
+    <span class="masthead-warn">NOT FINAL VISUAL DESIGN</span>
+  </div>
+</header>
+
+<div class="shell">
+
+  <nav class="binder" aria-label="Sheet index">
+    <div class="binder-label">Sheet index</div>
+    <ol class="binder-list" id="binderList">
+      <li><button class="binder-item is-active" data-sheet="s1"><span class="binder-no">01</span><span class="binder-name">Events Dashboard</span></button></li>
+      <li><button class="binder-item" data-sheet="s2"><span class="binder-no">02</span><span class="binder-name">New / Edit Event</span></button></li>
+      <li><button class="binder-item" data-sheet="s3"><span class="binder-no">03</span><span class="binder-name">Event Detail</span></button></li>
+      <li><button class="binder-item" data-sheet="s4"><span class="binder-no">04</span><span class="binder-name">Crew Roster</span></button></li>
+      <li><button class="binder-item" data-sheet="s5"><span class="binder-no">05</span><span class="binder-name">Crew Response (mobile)</span></button></li>
+    </ol>
+    <div class="binder-note">Numbered flags <span class="flag flag--mini">n</span> call out behavior. Read the legend under each sheet.</div>
+  </nav>
+
+  <main class="stage">
+
+    <!-- ============ SHEET 01 — EVENTS DASHBOARD ============ -->
+    <section class="sheet is-active" id="s1" aria-label="Sheet 01 — Events Dashboard">
+      <div class="sheet-frame">
+
+        <div class="toolbar">
+          <div class="toolbar-filters">
+            <button class="chip chip--active">All</button>
+            <button class="chip">Planning</button>
+            <button class="chip">Confirmed</button>
+            <button class="chip">Past</button>
+          </div>
+          <button class="btn btn--primary">+ New event <span class="flag" data-n="1">1</span></button>
+        </div>
+
+        <div class="event-list">
+
+          <article class="event-row">
+            <div class="event-row-main">
+              <div class="event-row-title">Hanzala — Live Premiere</div>
+              <div class="event-row-sub">Pioneer Works · Red Hook</div>
+            </div>
+            <div class="event-row-dates">
+              <span class="date-pill date-pill--show">Show · Nov 14</span>
+              <span class="date-pill">+2 rehearsals</span>
+            </div>
+            <div class="event-row-crew">
+              <span class="crew-frac crew-frac--partial">6 / 8 confirmed <span class="flag" data-n="2">2</span></span>
+            </div>
+            <div class="event-row-money">
+              <span class="money-label">Est. profit</span>
+              <span class="money-value">$3,140</span>
+            </div>
+            <div class="event-row-status">
+              <span class="status status--planning">Planning</span>
+            </div>
+          </article>
+
+          <article class="event-row">
+            <div class="event-row-main">
+              <div class="event-row-title">Winter Maqam Session</div>
+              <div class="event-row-sub">Brooklyn Conservatory of Music</div>
+            </div>
+            <div class="event-row-dates">
+              <span class="date-pill date-pill--show">Show · Dec 5</span>
+              <span class="date-pill">+1 rehearsal</span>
+            </div>
+            <div class="event-row-crew">
+              <span class="crew-frac crew-frac--full">8 / 8 confirmed</span>
+            </div>
+            <div class="event-row-money">
+              <span class="money-label">Est. profit</span>
+              <span class="money-value">$1,860</span>
+            </div>
+            <div class="event-row-status">
+              <span class="status status--confirmed">Confirmed</span>
+            </div>
+          </article>
+
+          <article class="event-row event-row--muted">
+            <div class="event-row-main">
+              <div class="event-row-title">Levantine Nights</div>
+              <div class="event-row-sub">National Sawdust</div>
+            </div>
+            <div class="event-row-dates">
+              <span class="date-pill">Show · Sep 20</span>
+            </div>
+            <div class="event-row-crew">
+              <span class="crew-frac crew-frac--full">7 / 7 played</span>
+            </div>
+            <div class="event-row-money">
+              <span class="money-label">Paid out</span>
+              <span class="money-value">$2,450 <span class="flag" data-n="3">3</span></span>
+            </div>
+            <div class="event-row-status">
+              <span class="status status--past">Past</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <ol class="legend">
+        <li><span class="flag">1</span> Starts the Sheet 02 form. Nothing else creates an event.</li>
+        <li><span class="flag">2</span> Fraction = confirmed ÷ invited, counted across every date on the event. Opens Sheet 03 → Crew &amp; Availability.</li>
+        <li><span class="flag">3</span> On a past event this cell shows money actually paid, not the estimate. Opens Sheet 03 → Payments.</li>
+      </ol>
+    </section>
+
+    <!-- ============ SHEET 02 — NEW / EDIT EVENT ============ -->
+    <section class="sheet" id="s2" aria-label="Sheet 02 — New or Edit Event">
+      <div class="sheet-frame sheet-frame--form">
+
+        <div class="form-col">
+
+          <fieldset class="f-block">
+            <legend>Basics</legend>
+            <label class="f-row"><span>Title</span><span class="f-input">Hanzala — Live Premiere</span></label>
+            <label class="f-row"><span>Linked project</span><span class="f-input f-input--select">Hanzala (optional) ▾ <span class="flag" data-n="1">1</span></span></label>
+            <label class="f-row f-row--area"><span>Description</span><span class="f-input f-input--area">Debut performance of the Hanzala suite, oud/qanun/percussion trio plus guest vocal.</span></label>
+          </fieldset>
+
+          <fieldset class="f-block">
+            <legend>Dates &amp; locations <span class="flag" data-n="2">2</span></legend>
+            <div class="date-row">
+              <span class="f-input f-input--tag f-input--tag-show">Show</span>
+              <span class="f-input">Sat, Nov 14 · 8:00 PM</span>
+              <span class="f-input">Pioneer Works ▾</span>
+              <button class="icon-btn" aria-label="Remove date">✕</button>
+            </div>
+            <div class="date-row">
+              <span class="f-input f-input--tag f-input--tag-rehearsal">Rehearsal</span>
+              <span class="f-input">Tue, Nov 10 · 7:00 PM</span>
+              <span class="f-input">Studio B, Gowanus</span>
+              <button class="icon-btn" aria-label="Remove date">✕</button>
+            </div>
+            <div class="date-row">
+              <span class="f-input f-input--tag f-input--tag-rehearsal">Rehearsal</span>
+              <span class="f-input">Thu, Nov 12 · 7:00 PM</span>
+              <span class="f-input">Studio B, Gowanus</span>
+              <button class="icon-btn" aria-label="Remove date">✕</button>
+            </div>
+            <button class="btn btn--ghost">+ Add date</button>
+          </fieldset>
+
+          <fieldset class="f-block">
+            <legend>Venue &amp; tickets</legend>
+            <label class="f-row"><span>Capacity</span><span class="f-input f-input--narrow">220</span></label>
+            <label class="f-row"><span>Ticket price</span><span class="f-input f-input--narrow">$35</span></label>
+            <label class="f-row"><span>Ticketed</span><span class="f-input f-input--toggle">● On</span></label>
+          </fieldset>
+
+        </div>
+
+        <div class="form-col form-col--budget">
+          <fieldset class="f-block">
+            <legend>Budget</legend>
+            <label class="f-row"><span>Musician fees (total)</span><span class="f-input f-input--narrow">$3,200</span></label>
+            <div class="expense-row">
+              <span class="f-input">Venue rental</span><span class="f-input f-input--narrow">$900</span>
+            </div>
+            <div class="expense-row">
+              <span class="f-input">Backline / PA</span><span class="f-input f-input--narrow">$450</span>
+            </div>
+            <button class="btn btn--ghost btn--small">+ Add expense</button>
+          </fieldset>
+
+          <div class="summary-box">
+            <div class="summary-label">Projected <span class="flag" data-n="3">3</span></div>
+            <div class="summary-line"><span>Potential income</span><span>220 × $35 = $7,700</span></div>
+            <div class="summary-line"><span>Fees + expenses</span><span>− $4,550</span></div>
+            <div class="summary-line summary-line--total"><span>Potential profit</span><span>$3,150</span></div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn--ghost">Save as draft</button>
+            <button class="btn btn--primary">Save &amp; assign crew →</button>
+          </div>
+        </div>
+
+      </div>
+
+      <ol class="legend">
+        <li><span class="flag">1</span> Optional link to an existing public Project — pulls cover art and blurb later, doesn't publish anything by itself.</li>
+        <li><span class="flag">2</span> Each date is tagged Show or Rehearsal and carries its own location — a rehearsal can sit in a different room than the show.</li>
+        <li><span class="flag">3</span> Recalculates live as capacity, price, fees, or expenses change. Never saved separately — always derived.</li>
+      </ol>
+    </section>
+
+    <!-- ============ SHEET 03 — EVENT DETAIL ============ -->
+    <section class="sheet" id="s3" aria-label="Sheet 03 — Event Detail">
+      <div class="sheet-frame">
+
+        <div class="detail-head">
+          <div>
+            <div class="detail-title">Hanzala — Live Premiere</div>
+            <div class="detail-sub">Pioneer Works · Nov 14 show · 2 rehearsals</div>
+          </div>
+          <span class="status status--planning">Planning</span>
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button class="tab is-active" data-tab="t1">Crew &amp; Availability</button>
+          <button class="tab" data-tab="t2">Repertoire &amp; Materials <span class="flag flag--mini" data-n="3">3</span></button>
+          <button class="tab" data-tab="t3">Payments</button>
+        </div>
+
+        <!-- Tab 1: Crew & Availability -->
+        <div class="tab-panel is-active" id="t1">
+          <div class="matrix">
+            <div class="matrix-row matrix-row--head">
+              <div class="matrix-cell matrix-cell--name">Crew</div>
+              <div class="matrix-cell">Reh. Nov 10</div>
+              <div class="matrix-cell">Reh. Nov 12</div>
+              <div class="matrix-cell">Show Nov 14</div>
+              <div class="matrix-cell matrix-cell--action"></div>
+            </div>
+            <div class="matrix-row">
+              <div class="matrix-cell matrix-cell--name">Yara Haddad <span class="role-tag">Oud</span></div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Confirmed</span></div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Confirmed</span></div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Confirmed</span></div>
+              <div class="matrix-cell matrix-cell--action">—</div>
+            </div>
+            <div class="matrix-row">
+              <div class="matrix-cell matrix-cell--name">Samer Khoury <span class="role-tag">Qanun</span></div>
+              <div class="matrix-cell"><span class="avail avail--pending">Pending <span class="flag" data-n="1">1</span></span></div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Confirmed</span></div>
+              <div class="matrix-cell"><span class="avail avail--pending">Pending</span></div>
+              <div class="matrix-cell matrix-cell--action"><button class="btn btn--ghost btn--small">Remind</button></div>
+            </div>
+            <div class="matrix-row">
+              <div class="matrix-cell matrix-cell--name">Dana Fakhoury <span class="role-tag">Percussion</span></div>
+              <div class="matrix-cell"><span class="avail avail--declined">Declined</span></div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Confirmed</span></div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Confirmed</span></div>
+              <div class="matrix-cell matrix-cell--action"><button class="btn btn--ghost btn--small">Sub in…</button></div>
+            </div>
+            <div class="matrix-row">
+              <div class="matrix-cell matrix-cell--name">Theo Marsh <span class="role-tag">Photographer</span></div>
+              <div class="matrix-cell">—</div>
+              <div class="matrix-cell">—</div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Confirmed</span></div>
+              <div class="matrix-cell matrix-cell--action">—</div>
+            </div>
+          </div>
+          <div class="matrix-actions">
+            <button class="btn btn--ghost">+ Add crew to this event</button>
+            <button class="btn btn--primary">Send invites <span class="flag" data-n="2">2</span></button>
+          </div>
+        </div>
+
+        <!-- Tab 2: Repertoire & Materials -->
+        <div class="tab-panel" id="t2">
+          <div class="rep-grid">
+            <div class="f-block">
+              <div class="f-block-title">Setlist</div>
+              <ol class="setlist">
+                <li>Maqam Hijaz Improvisation</li>
+                <li>Hanzala (suite, mvt. I–III)</li>
+                <li>Taqsim — oud solo</li>
+                <li>Closing Dabke</li>
+              </ol>
+              <button class="btn btn--ghost btn--small">+ Add piece</button>
+            </div>
+            <div class="f-block">
+              <div class="f-block-title">Materials</div>
+              <label class="f-row"><span>Google Drive folder</span><span class="f-input">drive.google.com/…/hanzala-charts</span></label>
+              <label class="f-row"><span>Notes</span><span class="f-input f-input--area">Charts in Db. Click track in folder for mvt. II only.</span></label>
+            </div>
+          </div>
+          <button class="btn btn--primary">Share with confirmed crew</button>
+        </div>
+
+        <!-- Tab 3: Payments -->
+        <div class="tab-panel" id="t3">
+          <div class="matrix matrix--pay">
+            <div class="matrix-row matrix-row--head">
+              <div class="matrix-cell matrix-cell--name">Crew</div>
+              <div class="matrix-cell">Agreed fee</div>
+              <div class="matrix-cell">Status</div>
+              <div class="matrix-cell">Paid on</div>
+            </div>
+            <div class="matrix-row">
+              <div class="matrix-cell matrix-cell--name">Yara Haddad</div>
+              <div class="matrix-cell">$900</div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Paid</span></div>
+              <div class="matrix-cell">Nov 15</div>
+            </div>
+            <div class="matrix-row">
+              <div class="matrix-cell matrix-cell--name">Samer Khoury</div>
+              <div class="matrix-cell">$900</div>
+              <div class="matrix-cell"><span class="avail avail--pending">Unpaid <span class="flag" data-n="4">4</span></span></div>
+              <div class="matrix-cell">—</div>
+            </div>
+            <div class="matrix-row">
+              <div class="matrix-cell matrix-cell--name">Dana Fakhoury</div>
+              <div class="matrix-cell">$800</div>
+              <div class="matrix-cell"><span class="avail avail--pending">Unpaid</span></div>
+              <div class="matrix-cell">—</div>
+            </div>
+            <div class="matrix-row">
+              <div class="matrix-cell matrix-cell--name">Theo Marsh</div>
+              <div class="matrix-cell">$600</div>
+              <div class="matrix-cell"><span class="avail avail--confirmed">Paid</span></div>
+              <div class="matrix-cell">Nov 15</div>
+            </div>
+          </div>
+          <div class="pay-summary">
+            <span>Paid <strong>$1,500</strong></span>
+            <span>Outstanding <strong>$1,700</strong></span>
+            <span>Total <strong>$3,200</strong></span>
+          </div>
+        </div>
+
+      </div>
+
+      <ol class="legend" id="legendS3">
+        <li data-tab-legend="t1"><span class="flag">1</span> Pending = invited, no response yet. Confirmed/Declined come back from the crew member's own response page (Sheet 05).</li>
+        <li data-tab-legend="t1"><span class="flag">2</span> Sends one message per newly-added crew member, covering every date they're attached to.</li>
+        <li data-tab-legend="t1 t2"><span class="flag">3</span> Locked until at least one person confirms — no setlist to send to an empty roster.</li>
+        <li data-tab-legend="t3"><span class="flag">4</span> A checkbox, not an integration — marking "Paid" here doesn't move money, it records that you already did.</li>
+      </ol>
+    </section>
+
+    <!-- ============ SHEET 04 — CREW ROSTER ============ -->
+    <section class="sheet" id="s4" aria-label="Sheet 04 — Crew Roster">
+      <div class="sheet-frame">
+
+        <div class="toolbar">
+          <span class="f-input f-input--search">Search crew…</span>
+          <div class="toolbar-filters">
+            <button class="chip chip--active">All roles</button>
+            <button class="chip">Musicians</button>
+            <button class="chip">Crew</button>
+          </div>
+          <button class="btn btn--primary">+ Add crew member <span class="flag" data-n="1">1</span></button>
+        </div>
+
+        <div class="crew-grid">
+          <article class="crew-card">
+            <div class="avatar"></div>
+            <div class="crew-name">Yara Haddad</div>
+            <div class="crew-role">Oud</div>
+            <div class="crew-contact">yara@… · (718) …</div>
+            <div class="crew-stat">11 events played <span class="flag flag--mini" data-n="2">2</span></div>
+          </article>
+          <article class="crew-card">
+            <div class="avatar"></div>
+            <div class="crew-name">Samer Khoury</div>
+            <div class="crew-role">Qanun</div>
+            <div class="crew-contact">samer@… · (917) …</div>
+            <div class="crew-stat">9 events played</div>
+          </article>
+          <article class="crew-card">
+            <div class="avatar"></div>
+            <div class="crew-name">Dana Fakhoury</div>
+            <div class="crew-role">Percussion</div>
+            <div class="crew-contact">dana@… · (347) …</div>
+            <div class="crew-stat">14 events played</div>
+          </article>
+          <article class="crew-card">
+            <div class="avatar"></div>
+            <div class="crew-name">Theo Marsh</div>
+            <div class="crew-role">Photographer</div>
+            <div class="crew-contact">theo@… · (646) …</div>
+            <div class="crew-stat">6 events played</div>
+          </article>
+          <article class="crew-card crew-card--ghost">
+            <div class="avatar avatar--plus">+</div>
+            <div class="crew-name crew-name--muted">Add someone new</div>
+          </article>
+        </div>
+      </div>
+
+      <ol class="legend">
+        <li><span class="flag">1</span> One record per person, built once — every event re-uses this roster instead of retyping contact info.</li>
+        <li><span class="flag">2</span> Opens their history: which events, which dates confirmed vs. declined, total paid to date.</li>
+      </ol>
+    </section>
+
+    <!-- ============ SHEET 05 — CREW RESPONSE (MOBILE) ============ -->
+    <section class="sheet" id="s5" aria-label="Sheet 05 — Crew Response, mobile">
+      <div class="sheet-frame sheet-frame--center">
+
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-brand">THE BROOKLYN NOMADS</div>
+            <div class="phone-greet">Hi Yara — you're needed for:</div>
+
+            <div class="phone-card">
+              <div class="phone-card-head">
+                <span class="date-pill date-pill--show">Show</span>
+                <span>Sat, Nov 14 · Pioneer Works</span>
+              </div>
+              <div class="phone-choice">
+                <button class="pbtn pbtn--yes">Available</button>
+                <button class="pbtn pbtn--no">Can't make it</button>
+              </div>
+            </div>
+
+            <div class="phone-card">
+              <div class="phone-card-head">
+                <span class="date-pill date-pill--rehearsal">Rehearsal</span>
+                <span>Tue, Nov 10 · Studio B</span>
+              </div>
+              <div class="phone-choice">
+                <button class="pbtn pbtn--yes pbtn--picked">Available</button>
+                <button class="pbtn pbtn--no">Can't make it</button>
+              </div>
+            </div>
+
+            <div class="phone-card">
+              <div class="phone-card-head">
+                <span class="date-pill date-pill--rehearsal">Rehearsal</span>
+                <span>Thu, Nov 12 · Studio B</span>
+              </div>
+              <div class="phone-choice">
+                <button class="pbtn pbtn--yes pbtn--picked">Available</button>
+                <button class="pbtn pbtn--no">Can't make it</button>
+              </div>
+            </div>
+
+            <label class="phone-note">Note for the band (optional)<span class="f-input f-input--area f-input--phone">Running 15 min late on the 10th, traffic from the bridge.</span></label>
+
+            <button class="btn btn--primary btn--block">Send my answers <span class="flag" data-n="1">1</span></button>
+          </div>
+        </div>
+
+        <div class="phone-aside">
+          <div class="f-block-title">Why this screen exists</div>
+          <p>Crew don't get an admin account. One link, opened on a phone, no login — <span class="flag flag--mini" data-n="2">2</span> that's the whole interaction.</p>
+        </div>
+
+      </div>
+
+      <ol class="legend">
+        <li><span class="flag">1</span> Writes straight back into the Crew &amp; Availability matrix on Sheet 03 — no admin step in between.</li>
+        <li><span class="flag">2</span> Access is a unique link (sent by email/text), not a password. Open question for you: is that acceptable, or do crew need real logins?</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
